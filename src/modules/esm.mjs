@@ -13,9 +13,9 @@ const random = Math.random();
 let unknownObject;
 
 if (random > 0.5) {
-    unknownObject = a;
+  unknownObject = a;
 } else {
-    unknownObject = b;
+  unknownObject = b;
 }
 console.log(unknownObject);
 
@@ -27,14 +27,14 @@ console.log(`Path to current file is ${__filename}`);
 console.log(`Path to current directory is ${__dirname}`);
 
 const myServer = createServerHttp((_, res) => {
-    res.end('Request accepted');
+  res.end('Request accepted');
 });
 
 const PORT = 3000;
 
 myServer.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
-    console.log('To terminate it, use Ctrl+C combination');
+  console.log(`Server is listening on port ${PORT}`);
+  console.log('To terminate it, use Ctrl+C combination');
 });
 
-export {unknownObject, myServer};
+export { unknownObject, myServer };
