@@ -1,5 +1,5 @@
 import { Worker } from 'worker_threads';
-import os from 'os';
+import { availableParallelism } from 'os';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const performCalculations = async () => {
   // Get the number of CPU cores
-  const cpuCount = os.cpus().length;
+  const cpuCount = availableParallelism();
 
   // An array to hold all promises (one per worker)
   const promises = [];
